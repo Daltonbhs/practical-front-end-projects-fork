@@ -40,8 +40,18 @@ header {
 }
 
 .menu {
+    align-items: center;
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    width: 200px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
     width: 200px;
 }
@@ -62,6 +72,7 @@ header {
     transform: scale(1.2) perspective(1px);
     transition: all 0.3s ease;
     color: #ff0000;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 footer{
@@ -79,4 +90,14 @@ h1{
 p{
     font-family: "Press Start 2P";
     font-size: 12px;
+}
+
+#quitBtn:click{
+    background-color: transparent;
+    color: transparent;
+}
+
+.message{
+    font-family: "Press Start 2P";
+    font-size: 100%;
 }
