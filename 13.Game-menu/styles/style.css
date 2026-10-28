@@ -131,3 +131,33 @@ p{
     padding: 10px 20px;
     cursor: pointer;
 }
+
+#creditsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
+    gap: 20px;
+    width: 300%;
+}
+
+#backManyBtn{
+    position: relative;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: "Press Start 2P";
+    font-size: 24px;
+    padding: 10px 20px;
+}
+
+#pnames{
+    font-family: "Press Start 2P";
+    font-size: 150%;
+    color:#000000;
+    text-align: center;
+    text-align-last: center;
+    margin-top: 20px;
+    line-height: 1.6;
+}
