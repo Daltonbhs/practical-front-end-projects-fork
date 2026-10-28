@@ -115,3 +115,64 @@ function stopGame(){
     creditsBtn.style.display = 'inline-block';
     quitBtn.style.display = 'inline-block';
 }
+
+function showCredits(){
+    var creditsContainer = document.getElementById('creditsContainer');
+
+    var title = document.getElementById('title');
+    var version = document.getElementById('version');
+    var creditsBtn = document.getElementById('creditsBtn');
+    var quitBtn = document.getElementById('quitBtn');
+    var optionsBtn = document.getElementById('optionsBtn');
+    var playBtn = document.getElementById('playBtn');
+
+
+    title.style.display = 'none';
+    playBtn.style.display = 'none';
+    quitBtn.style.display = 'none';
+    optionsBtn.style.display = 'none';
+    creditsBtn.style.display = 'none';
+    version.style.display = 'none';
+    quitBtn.style.display = 'none';
+
+    var navMenu = document.querySelector('.menu');
+    var container = document.createElement("div");
+    container.setAttribute("id", "creditsContainer");
+    navMenu.appendChild(container);
+
+    var message = document.createElement("p");
+    message.setAttribute("id", "pMessage");
+    message.innerHTML = "Developed by:";
+    container.appendChild(message);
+
+    var pnames = document.createElement("p");
+    pnames.setAttribute("id", "pnames");
+    pnames.innerHTML = "Allan Daniel <br> Aryane Ribeiro<br> Beatriz Vallada<br> Bruno Souza";
+    container.appendChild(pnames);
+
+    var backBtn = document.createElement("button");
+    backBtn.setAttribute("id", "backmenuBtn");
+    backBtn.setAttribute("class", "btn");
+    backBtn.innerHTML = "Back";
+    backBtn.onclick = backmenu;
+    container.appendChild(backBtn);
+}
+
+function backmenu(){
+    var creditsContainer = document.getElementById('creditsContainer');
+    creditsContainer.remove();
+    var title = document.getElementById('title');
+    var version = document.getElementById('version');
+    var playBtn = document.getElementById('playBtn');
+    var quitBtn = document.getElementById('quitBtn');
+    var optionsBtn = document.getElementById('optionsBtn');
+    var creditsBtn = document.getElementById('creditsBtn');
+
+    title.style.display = 'inline-block';
+    version.style.display = 'inline-block';
+    playBtn.style.display = 'inline-block';
+    quitBtn.style.display = 'inline-block';
+    optionsBtn.style.display = 'inline-block';
+    creditsBtn.style.display = 'inline-block';
+    quitBtn.style.display = 'inline-block';
+}
