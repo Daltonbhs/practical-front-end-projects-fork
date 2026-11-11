@@ -1,0 +1,139 @@
+ .press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+ }
+
+/* Configuração do Fundo e Centralização */
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  
+  /* Fundo degradê liso (troque pelas cores de sua preferência) */
+  background: linear-gradient(135deg, #f5f4f4, #e1dfdf); /* Degradê de preto para cinza escuro */
+  
+  /* Centralização perfeita na tela */
+  display: flex;
+  flex-direction: column; /* Coloca o título em cima e o tabuleiro embaixo */
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Espaço entre o título e o tabuleiro */
+  
+  /* Aplica a fonte importada */
+  font-family: 'Press Start 2P', monospace;
+  
+  /* Evita rolagem indesejada */
+  overflow: hidden;
+}
+
+h1 {
+  color: #000000; /* Cor do título */
+  text-align: center; /* Centraliza o texto */
+  font-size: 3rem; /* Tamanho da fonte */
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove padding padrão */
+  
+}
+
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  
+  /* Responsividade: ajusta a qualquer tela */
+  width: 80vw;
+  max-width: 360px;
+  aspect-ratio: 1 / 1;
+  
+  /* Estilo visual do container */
+  background-color: #111111;
+  border: 1px solid #fff; /* Borda reta e sem curva para ar pixelado */
+  box-shadow: 4px 4px 0px #bcbcbc; /* Sombra dura estilo 8-bit */
+}
+
+.cell {
+  /* Estilo visual das células */
+  background-color: #111; /* Cor de fundo do quadrado */
+  border: 2px dashed #fff; /* Borda pixelada estilo 8-bit */
+
+  image-rendering: pixelated; /* Mantém a nitidez das imagens pixeladas */
+  image-rendering: crisp-edges; /* Mantém a nitidez das imagens pixeladas */
+}
+
+.background-effect {
+  /* Efeito de fundo animado */
+  position: absolute;
+  inset: 0; /* Faz o efeito ocupar toda a tela */
+  z-index: -1; /* Coloca o efeito atrás de todos os elementos */
+  pointer-events: none; /* Permite que o usuário interaja com os elementos acima do efeito */
+}
+
+.quadradinhos {
+  width: 12px; /* Largura do quadradinho */
+  height: 12px; /* Altura do quadradinho */
+  background-color: rgb(0, 0, 0); /* Cor e transparência do quadradinho */
+
+  position: absolute; /* Permite posicionamento livre na tela */
+
+  animation: explodir 0.7s; /* Animação de explosão do quadradinho */
+}
+
+@keyframes explodir {
+  0% {
+    transform: scale(1); /* Estado inicial */
+    opacity: 1; /* Totalmente visível */
+  }
+  60% {
+    transform: scale(1); /* Aumenta e se move */
+    opacity: 1; /* Desaparece */
+  }
+  75% {
+    transform: scale(4); /* Aumenta e se move */
+    opacity: 0; /* Desaparece */
+  }100% {
+    transform: scale(4); /* Aumenta e se move */
+    opacity: 0; /* Desaparece */
+  }
+}
+
+.particula {
+  width: 6px; /* Largura da partícula */
+  height: 6px; /* Altura da partícula */
+  background-color: rgba(25, 25, 25, 0.719); /* Cor e transparência da partícula */
+
+  position: absolute; /* Permite posicionamento livre na tela */
+  animation: explodirParticula 0.5s; /* Animação de explosão da partícula */
+}
+
+@keyframes explodirParticula {
+  0% {
+    transform: translate(0, 0);/* Estado inicial */
+    opacity: 1; /* Totalmente visível */
+  
+  }100% {
+    transform: translate(var(--x), var(--y)); /* Move para a posição final */
+    opacity: 0; /* Desaparece */
+  }
+}
+
+.vovo {
+  font-size: 48px; /* Tamanho do emoji */
+  position: absolute; /* Permite posicionamento livre na tela */
+  display: none; /* Inicialmente escondido */
+  animation: cair 2.5s forwards; /* Animação de queda do emoji */
+}
+
+@keyframes cair {
+  0%, 70% {
+    transform: translateY(0); /* Posição inicial */
+    opacity: 1; /* Visível */
+  }
+  100% {
+    transform: translateY(400px); /* Sai da tela para baixo */
+    opacity: 0; /* Invisível */
+  }
+  
+}
